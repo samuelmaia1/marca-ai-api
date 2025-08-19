@@ -1,5 +1,8 @@
 package com.samuelmaia1.github.marca_ai_api.marca_ai.models;
 
+import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestAvailabilityExceptionDTO;
+import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestDoctorDto;
+import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestRecurringAvailabilityDTO;
 import com.samuelmaia1.github.marca_ai_api.marca_ai.enums.Speciality;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -74,4 +77,15 @@ public class Doctor {
             inverseJoinColumns = @JoinColumn(name = "agreement_id")
     )
     private List<Agreement> agreements = new ArrayList<>();
+
+    public Doctor(RequestDoctorDto dto) {
+        this.name = dto.getName();
+        this.lastName = dto.getLastName();
+        this.cpf = dto.getCpf();
+        this.crm = dto.getCrm();
+        this.email = dto.getEmail();
+        this.birthDay = dto.getBirthDay();
+        this.description = dto.getDescription();
+        this.speciality = dto.getSpeciality();
+    }
 }
