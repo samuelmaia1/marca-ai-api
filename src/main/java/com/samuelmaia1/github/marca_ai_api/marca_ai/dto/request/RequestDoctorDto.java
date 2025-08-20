@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,7 +22,7 @@ public class RequestDoctorDto {
     private String crm;
     private Speciality speciality;
 
-    private List<RequestRecurringAvailabilityDTO> recurringAvailabilities;
-    private List<RequestAvailabilityExceptionDTO> exceptionsAvailabilities;
+    private List<RequestRecurringAvailabilityDto> recurringAvailabilities = new ArrayList<>();
+    private List<RequestAvailabilityExceptionDto> exceptionsAvailabilities = new ArrayList<>();
     private List<UUID> agreements;
 }

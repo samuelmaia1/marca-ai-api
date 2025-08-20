@@ -1,8 +1,6 @@
 package com.samuelmaia1.github.marca_ai_api.marca_ai.models;
 
-import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestAvailabilityExceptionDTO;
 import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestDoctorDto;
-import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestRecurringAvailabilityDTO;
 import com.samuelmaia1.github.marca_ai_api.marca_ai.enums.Speciality;
 import jakarta.persistence.*;
 import lombok.Data;

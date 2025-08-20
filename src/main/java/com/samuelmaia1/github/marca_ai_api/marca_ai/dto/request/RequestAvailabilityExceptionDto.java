@@ -9,7 +9,7 @@ import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
-public class RequestAvailabilityExceptionDTO {
+public class RequestAvailabilityExceptionDto {
     private LocalDate date;
     private LocalTime start;
     private LocalTime end;

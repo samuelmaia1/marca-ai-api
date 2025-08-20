@@ -8,7 +8,7 @@ import java.time.LocalTime;
 
 @Data
 @NoArgsConstructor
-public class RequestRecurringAvailabilityDTO {
+public class RequestRecurringAvailabilityDto {
     private DayOfWeek dayOfWeek;
     private LocalTime start;
     private LocalTime end;
