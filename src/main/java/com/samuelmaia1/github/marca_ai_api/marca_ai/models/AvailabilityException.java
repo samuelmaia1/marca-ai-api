@@ -34,4 +34,9 @@ public class AvailabilityException {
     @Enumerated(EnumType.STRING)
     @Column(name = "type", length = 30)
     private AvailabilityExceptionType type;
+
+    @Override
+    public String toString() {
+        return start + " " + end + date.getDayOfWeek().toString();
+    }
 }

@@ -30,4 +30,9 @@ public class RecurringAvailability {
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
+
+    @Override
+    public String toString() {
+        return start + " " + end + " " + dayOfWeek.toString();
+    }
 }
