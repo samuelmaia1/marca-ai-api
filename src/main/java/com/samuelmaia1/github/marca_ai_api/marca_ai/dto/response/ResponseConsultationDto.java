@@ -16,6 +16,7 @@ public class ResponseConsultationDto {
     private LocalTime start;
     private LocalTime end;
     private DoctorSummary doctor;
+    private PatientSummary patient;
 
     @Data
     @NoArgsConstructor
@@ -23,5 +24,13 @@ public class ResponseConsultationDto {
         private UUID id;
         private String name;
         private Speciality speciality;
+    }
+
+    @Data
+    @NoArgsConstructor
+    public static class PatientSummary {
+        private UUID id;
+        private String name;
+        private String lastName;
     }
 }

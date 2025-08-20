@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConsultationMapper implements Mapper<Consultation, RequestConsultationDto, ResponseConsultationDto> {
 
-
     @Override
     public ResponseConsultationDto toDto(Consultation consultation) {
         ResponseConsultationDto dto = new ResponseConsultationDto();
@@ -18,11 +17,17 @@ public class ConsultationMapper implements Mapper<Consultation, RequestConsultat
         dto.setEnd(consultation.getEnd());
         dto.setStart(consultation.getStart());
 
-        ResponseConsultationDto.DoctorSummary summary = new ResponseConsultationDto.DoctorSummary();
-        summary.setId(consultation.getDoctor().getId());
-        summary.setName(consultation.getDoctor().getName());
-        summary.setSpeciality(consultation.getDoctor().getSpeciality());
-        dto.setDoctor(summary);
+        ResponseConsultationDto.DoctorSummary doctorSummary = new ResponseConsultationDto.DoctorSummary();
+        doctorSummary.setId(consultation.getDoctor().getId());
+        doctorSummary.setName(consultation.getDoctor().getName());
+        doctorSummary.setSpeciality(consultation.getDoctor().getSpeciality());
+        dto.setDoctor(doctorSummary);
+
+        ResponseConsultationDto.PatientSummary patientSummary = new ResponseConsultationDto.PatientSummary();
+        patientSummary.setId(consultation.getPatient().getId());
+        patientSummary.setName(consultation.getPatient().getName());
+        patientSummary.setLastName(consultation.getPatient().getLastName());
+        dto.setPatient(patientSummary);
 
         return dto;
     }
