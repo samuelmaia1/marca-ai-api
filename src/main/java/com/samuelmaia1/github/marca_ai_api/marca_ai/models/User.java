@@ -1,5 +1,6 @@
 package com.samuelmaia1.github.marca_ai_api.marca_ai.models;
 
+import com.samuelmaia1.github.marca_ai_api.marca_ai.dto.request.RequestUserDto;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -53,4 +54,12 @@ public class User {
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consultation> consultations = new ArrayList<>();
 
+    public User(RequestUserDto dto) {
+        this.name = dto.getName();
+        this.cpf = dto.getCpf();
+        this.lastName = dto.getLastName();
+        this.birthDay = dto.getBirthDay();
+        this.email = dto.getEmail();
+        this.description = dto.getDescription();
+    }
 }
